@@ -29,10 +29,21 @@
       font-size: 2.5rem;
       color: #ffb6c1;
       text-shadow: 2px 2px 5px #000;
+      cursor: pointer; /* vai funcionar no celular */
     }
 
     nav {
       margin: 15px 0;
+      display: none; /* escondido por padrão */
+      transition: opacity 0.3s ease;
+    }
+
+    nav.mostrar {
+      display: block;
+    }
+
+    header:hover nav {
+      display: block; /* no PC aparece ao passar o mouse */
     }
 
     nav a {
@@ -172,8 +183,8 @@
 </head>
 <body>
   <header>
-    <h1>LARICAH STORE</h1>
-    <nav>
+    <h1 id="menu-toggle">LARICAH STORE</h1>
+    <nav id="menu">
       <a href="#produtos">🛍️ Produtos</a>
       <a href="#vendas">💸 Vendas</a>
       <a href="#avaliacoes">⭐ Avaliações</a>
@@ -184,42 +195,31 @@
   <section id="produtos">
     <h2>🛍️ Produtos</h2>
     <div class="produtos-container">
-      <!-- Produto 1 -->
       <div class="produto">
         <img src="B1.jpg" alt="Produto 1">
         <h3>Produto 1</h3>
         <p>R$ 00,00</p>
       </div>
-
-      <!-- Produto 2 -->
       <div class="produto">
         <img src="B2.jpg" alt="Produto 2">
         <h3>Produto 2</h3>
         <p>R$ 00,00</p>
       </div>
-
-      <!-- Produto 3 -->
       <div class="produto">
         <img src="B3.jpg" alt="Produto 3">
         <h3>Produto 3</h3>
         <p>R$ 00,00</p>
       </div>
-
-      <!-- Produto 4 -->
       <div class="produto">
         <img src="B4.jpg" alt="Produto 4">
         <h3>Produto 4</h3>
         <p>R$ 00,00</p>
       </div>
-
-      <!-- Produto 5 -->
       <div class="produto">
         <img src="B5.jpg" alt="Produto 5">
         <h3>Produto 5</h3>
         <p>R$ 00,00</p>
       </div>
-
-      <!-- Produto 6 -->
       <div class="produto">
         <img src="B6.jpg" alt="Produto 6">
         <h3>Produto 6</h3>
@@ -236,21 +236,16 @@
   <section id="avaliacoes">
     <h2>⭐ Avaliações</h2>
     <div class="avaliacoes-container">
-      <!-- Avaliação 1 -->
       <div class="avaliacao">
         <img src="avaliacao1.jpg" alt="Comprador 1">
         <h3>Caio</h3>
         <p>"Atendimento excelente e entrega super rápida!"</p>
       </div>
-
-      <!-- Avaliação 2 -->
       <div class="avaliacao">
         <img src="avaliacao2.jpg" alt="Comprador 2">
         <h3>Maya</h3>
         <p>"Produto de ótima qualidade, super recomendo."</p>
       </div>
-
-      <!-- Avaliação 3 -->
       <div class="avaliacao">
         <img src="avaliacao3.jpg" alt="Comprador 3">
         <h3>Arthur</h3>
@@ -263,5 +258,15 @@
     <h2>📞 Contato</h2>
     <a href="https://linktr.ee/Laricabrairont2" target="_blank" class="botao-link">Acessar Contato</a>
   </section>
+
+  <script>
+    // Para celular: alternar menu ao clicar no título
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('mostrar');
+    });
+  </script>
 </body>
 </html>
