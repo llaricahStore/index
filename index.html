@@ -86,6 +86,47 @@
       color: #fff;
       transform: scale(1.05);
     }
+
+    /* Avaliações */
+    .avaliacoes-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .avaliacao {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .avaliacao:hover {
+      transform: scale(1.05);
+    }
+
+    .avaliacao img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ff69b4;
+      margin-bottom: 10px;
+    }
+
+    .avaliacao h3 {
+      margin: 10px 0 5px;
+      color: #ffb6c1;
+    }
+
+    .avaliacao p {
+      font-size: 0.95rem;
+      color: #f1f1f1;
+    }
   </style>
 </head>
 <body>
@@ -111,7 +152,28 @@
 
   <section id="avaliacoes">
     <h2>⭐ Avaliações</h2>
-    <p>Confira o que nossos clientes falam sobre nós.</p>
+    <div class="avaliacoes-container">
+      <!-- Avaliação 1 -->
+      <div class="avaliacao">
+        <img src="avaliacao1.jpg" alt="Comprador 1">
+        <h3>Comprador 1</h3>
+        <p>"Atendimento excelente e entrega super rápida!"</p>
+      </div>
+
+      <!-- Avaliação 2 -->
+      <div class="avaliacao">
+        <img src="avaliacao2.jpg" alt="Comprador 2">
+        <h3>Comprador 2</h3>
+        <p>"Produto de ótima qualidade, super recomendo."</p>
+      </div>
+
+      <!-- Avaliação 3 -->
+      <div class="avaliacao">
+        <img src="avaliacao3.jpg" alt="Comprador 3">
+        <h3>Comprador 3</h3>
+        <p>"Já comprei mais de uma vez e sempre tudo certo."</p>
+      </div>
+    </div>
   </section>
 
   <section id="contato">
